@@ -14,10 +14,6 @@ function AppLayouts() {
       <div className="w-full flex justify-center p-5 h-screen">
         <Outlet />
       </div>
-
-      <div>
-        <Footer />
-      </div>
     </main>
   );
 }

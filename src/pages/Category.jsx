@@ -5,9 +5,10 @@ import useQueryCategory from "@/hooks/useQueryCategory";
 import { Search, SlidersHorizontal } from "lucide-react";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Footer from "@/components/fragments/Footer";
 import Card from "@/components/fragments/Cards";
 import LoadingSkeletonElement from "@/components/fragments/LoadingSkeletonElement";
+import { categoryImage } from "@/utils";
+import Footer from "@/components/fragments/Footer";
 
 function Category() {
   const { categorys, isLoading, isError } = useQueryCategory();
@@ -25,28 +26,6 @@ function Category() {
   if (isError) {
     return <h2>Error...</h2>;
   }
-
-  const categoryImage = {
-    NodeJs: "/icons8-nodejs.svg",
-    Code: "/icons8-code.svg",
-    bash: "/icons8-bash.svg",
-    Docker: "/icons8-docker.svg",
-    Django: "/icons8-django.svg",
-    "Next.js": "/icons8-nextjs.svg",
-    HTML: "/icons8-html.svg",
-    VueJS: "/icons8-vue-js.svg",
-    SQL: "/sql-database-generic-svgrepo-com.svg",
-    React: "/react-js-icon.svg",
-    WordPress: "/wordpress-icon.svg",
-    DevOps: "/devops-2.svg",
-    Linux: "/linux-tux.svg",
-    uncategorized: "/uncategorized-svgrepo-com.svg",
-    Postgres: "/postgresql.svg",
-    Laravel: "/laravel-2.svg",
-    CMS: "/cms.svg",
-    cPanel: "cpanel.svg",
-    "Apache Kafka": "/kafka.svg",
-  };
 
   return (
     <div className="w-full space-y-5">
@@ -83,11 +62,11 @@ function Category() {
             return (
               <Card
                 key={id}
-                className="relative bg-white rounded-xl shadow-md overflow-hidden cursor-pointer transition-transform duration-300"
+                className="relative bg-white rounded-xl shadow-md overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-105"
                 onClick={() => navigate(`/questions/${name}`)}
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-white opacity-20"></div>
-                <div className="p-6 flex flex-col items-center justify-center text-center">
+                <div className="p-6 flex flex-col items-center justify-center text-center ">
                   <div className="w-12 h-12 rounded-full flex items-center justify-center mb-3">
                     <Card.Image
                       src={image}

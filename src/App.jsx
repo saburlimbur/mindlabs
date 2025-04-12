@@ -10,6 +10,7 @@ import { ClerkProvider } from "@clerk/clerk-react";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import CategoryQuestionByName from "./pages/category/_params";
+import { Toaster } from "react-hot-toast";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -47,6 +48,7 @@ function App() {
               <Route path="/signup" element={<Register />} />
             </Route>
           </Routes>
+          <Toaster position="top-right" reverseOrder={false} />
           <ReactQueryDevtools initialIsOpen={false} />
         </QueryClientProvider>
       </ClerkProvider>
